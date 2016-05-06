@@ -1,0 +1,38 @@
+{% extends "UserBundle::layout.html.twig" %}
+{% block title %} {{ 'security.login.title'|trans({},'FOSUserBundle') }}{% endblock %}
+{% block title_form %}{{ 'security.login.submit'|trans({},'FOSUserBundle') }}{% endblock %}
+
+
+{% block fos_user_content %}
+    
+    {% if error %}
+                <div class="alert-warning">{{ error|trans({}, 'FOSUserBundle') }}</div>
+            {% endif %}
+            <form action="{{ path("fos_user_security_check") }}" method="post" class="login-form margin-clear">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                <div class="form-group has-feedback">
+                    <label class="control-label" for="username">{{ 'security.login.username'|trans({},'FOSUserBundle') }}</label>
+                    <input id="username" name="_username" value="{{ last_username }}" required="required" type="text" class="form-control" placeholder="">
+                    <i class="fa fa-user form-control-feedback"></i>
+                    
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="control-label" for="password">{{ 'security.login.password'|trans({},'FOSUserBundle') }}</label>
+                    <input type="password" id="password" name="_password" required="required" class="form-control" placeholder="">
+                    <i class="fa fa-lock form-control-feedback"></i>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    <label class="control-label" for="remember_me">{{ 'security.login.remember_me'|trans({},'FOSUserBundle') }}</label>
+                </div>                
+
+                    <div><button type="submit"  id="_submit" name="_submit" class="btn btn-red btn-sm">{{ 'security.login.submit'|trans({},'FOSUserBundle') }}</button></div>
+                
+
+               
+                <div><a href="{{path("fos_user_resetting_request")}}">Brain fart?</a></div>
+               
+            </form>
+  {% endblock fos_user_content %}
+            

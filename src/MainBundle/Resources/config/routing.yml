@@ -1,0 +1,5 @@
+# src/MainBundle/Resources/config/routing.yml
+
+Main_homepage:
+    path:     /
+    defaults: { _controller: MainBundle:Main:index }

@@ -1,0 +1,8 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block title %}{{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }} {% endblock %}
+{% block title_form %} {{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }} {% endblock %}
+
+{% block fos_user_content %}
+{% include "FOSUserBundle:Resetting:reset_content.html.twig" %}
+{% endblock fos_user_content %}

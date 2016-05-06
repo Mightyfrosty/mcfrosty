@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: frosty
+    database_user: root
+    database_password: null
+    mailer_transport: gmail
+    mailer_host: 127.0.0.1
+    mailer_user: fnduister@gmail.com
+    mailer_password: Madeleine1!
+    secret: 60831a33e8f7bbb0d89195bc63710e217fbd2819
+    
+    Title: McFrosty

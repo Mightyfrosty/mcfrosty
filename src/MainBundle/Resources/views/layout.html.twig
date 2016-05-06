@@ -1,0 +1,187 @@
+{% extends '::base.html.twig'%}
+{% block meta %}
+    <meta charset="utf-8">
+
+    <meta name="author" content="htmlcoder.me">
+
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% endblock %}
+
+
+{#
+///////////////////////////////////////////////////////////////////////////////////////////////
+block stylesheets
+///////////////////////////////////////////////////////////////////////////////////////////////
+#}
+{% block stylesheets %}
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('bundles/Main/img/favicon.ico') }}" type="image/x-icon">
+
+    <!-- Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+    {% stylesheets filter='cssrewrite'
+
+'bundles/Main/css/bootstrap.min.css'
+'bundles/Main/css/myStyle.css'
+'bundles/Main/fonts/font-awesome/css/font-awesome.css'
+'bundles/Main/css/project-style.css'
+
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+
+    <!--End of stylesheets block-->
+{% endblock %}
+
+
+
+{#
+///////////////////////////////////////////////////////////////////////////////////////////////
+block body
+///////////////////////////////////////////////////////////////////////////////////////////////
+#}
+
+{% block body %}
+    <!-- page wrapper start -->
+    <!-- ================ -->
+    <div class="wrapper">
+
+        <!-- header-container start -->
+        <div class="header-container">
+
+            <!-- header-top start -->
+            <!-- classes:  -->
+            <!-- ================ -->
+            <div class="header-top dark ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-6 col-md-9">
+                            <!-- header-top-first start -->
+                            <!-- ================ -->
+                            <div class="header-top-first clearfix">
+                                <ul class="social-links circle small clearfix hidden-xs">
+                                    <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
+                                    <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                                    <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+                                    <li class="youtube"><a target="_blank" href="http://www.youtube.com"><i class="fa fa-youtube-play"></i></a></li>
+                                    <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
+                                    <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+                                </ul>
+                                <div class="social-links hidden-lg hidden-md hidden-sm circle small">
+                                    <div class="btn-group dropdown">
+                                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i></button>
+                                        <ul class="dropdown-menu dropdown-animation">
+                                            <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                                            <li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
+                                            <li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+                                            <li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+                                            <li class="youtube"><a target="_blank" href="http://www.youtube.com"><i class="fa fa-youtube-play"></i></a></li>
+                                            <li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
+                                            <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                                            <li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="list-inline hidden-sm hidden-xs">
+                                    <li><i class="fa fa-map-marker pr-5 pl-10"></i>One Infinity Loop Av, Tk 123456</li>
+                                    <li><i class="fa fa-phone pr-5 pl-10"></i>+12 123 123 123</li>
+                                    <li><i class="fa fa-envelope-o pr-5 pl-10"></i> admin@frosty.com</li>
+                                </ul>
+                            </div>
+                            <!-- fin de la premiere partie-->
+                        </div>
+
+                        <div class="col-xs-9 col-sm-6 col-md-3">
+
+                            <!-- header-top-second start -->
+                            <!-- ================ -->
+                            <div id="header-top-second"  class="clearfix ">
+
+                                {%if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
+                                    
+                                    
+                                    <div class="dropdown">
+  <button id="profile" class=" dropdown-toggle margin-top" type="button" data-toggle="dropdown">Bonjour {{app.user.username}}
+  <span class="caret"></span></button>
+  <ul id="profile-menu" class="dropdown-menu">
+    <li><a href="{{path("fos_user_security_logout")}}"> Deconnexion </a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ul>
+</div>
+                                    
+                                    
+                                    
+                                {% else %}
+                                    <div class="btn-group">
+                                        <a href="{{path('fos_user_registration_register')}}" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> Sign Up</a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a href="{{path('fos_user_security_login')}}" class="btn btn-default btn-sm"><i class="fa fa-lock pr-10"></i> Sign In</a>
+                                    </div>
+                                {% endif %}
+                                <!--  header top dropdowns end -->
+                            </div>
+                            <!-- header-top-second end -->
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>{# fin du header#}
+                                
+        {#title#}
+        <div class="container">
+        <div class="center-block space-100">
+            <div id="title" class="main-title">
+                <span>F</span>rosty
+            </div>
+            
+        </div>
+        </div>{#End title#}
+                                
+        
+        
+        <div class="p-0 content">
+            <div class="container">
+                <div class="row">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{#
+///////////////////////////////////////////////////////////////////////////////////////////////
+block javascript
+///////////////////////////////////////////////////////////////////////////////////////////////
+#}
+{% block javascripts %}   
+
+
+    {% javascripts
+'bundles/Main/js/jquery-1.12.3.js'
+'bundles/Main/js/bootstrap.js' 
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

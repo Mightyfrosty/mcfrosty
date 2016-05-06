@@ -1,0 +1,34 @@
+
+{% extends "MainBundle::layout.html.twig" %}
+{% block title %} Homepage {% endblock %}
+
+
+
+{%block content %}
+
+    <div class="center-block">
+    <div class="col-md-3 circle-box">
+            <a href="https://books.mcfrosty.com">
+            <img src="{{asset("bundles/Main/img/Books.png")}}"/>
+        </a>
+    </div>
+
+    <div class="col-md-3 circle-box">
+        <a href="https://media.mcfrosty.com">
+            <img src="{{asset("bundles/Main/img/Media.png")}}"/>
+        </a> 
+   </div>
+
+    <div class="col-md-3 circle-box">
+        <a href="https://music.mcfrosty.com">
+            <img src="{{asset("bundles/Main/img/Music.png")}}"/>
+        </a>
+    </div>
+
+    <div class="col-md-3 circle-box">
+        <a href="https://cloud.mcfrosty.com">
+            <img src="{{asset("bundles/Main/img/Cloud.png")}}"/>
+        </a>
+    </div>
+            <div>
+{%endblock%}

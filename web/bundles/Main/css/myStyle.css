@@ -1,0 +1,234 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 23, 2016, 4:16:36 AM
+    Author     : fndui
+*/
+
+body{
+    background-image:url('../img/Bg.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 900px;
+}
+
+@font-face {
+    font-family: 'Zapfino-One';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/ZapfinoExtraLT/ZapfinoForteLT-One.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Zapfino-Four';
+    font-style: normal;
+    font-weight: normal;
+    src:url('../fonts/ZapfinoExtraLT/ZapfinoExtraLT-Four.ttf') format('truetype');
+}
+
+.circle-box{max-width: 14em;
+            margin-top:1em;
+            display: block}
+
+.space-100{padding-left: 60px}
+
+#title{
+    color:white;
+    font-family: 'Zapfino-One';
+    font-size: 15vw;
+    display:block;
+    margin:0px auto;
+    position:relative;
+    float:none;
+    max-width: 2em;
+    line-height: 1.2;
+}
+
+.main-container .p-0{
+    padding: 0;
+}
+
+#title span{
+    font-family: 'Zapfino-Four';
+    font-size: 20vw;
+    line-height: 1.2;
+    margin-right: -20px;
+}
+
+@media (max-width: 767px) {
+    #title span{
+        font-family: 'Zapfino-Four';
+        font-size: 50vw;
+        line-height: 1.2;
+    }
+
+
+
+}
+
+@media screen and (max-width: 320px) { 
+
+}
+
+
+
+#profile{
+    background:none;
+    border-image: none;
+    border:0px solid transparent;
+}
+
+#profile-menu{
+    margin-top: 1em;
+    background:rgba(46, 53, 55, 0.4);
+    border:0px solid transparent;
+}
+
+#profile-menu a{color:white}
+
+.margin-top{
+    margin-top: 10px;
+}
+
+.border-clear {
+    border: none !important;
+}
+
+
+
+.form-block .social-links {
+    display: inline-block;
+    margin: 0 0 0 5px;
+}
+.form-block ul {
+    padding-left: 0;
+    list-style-position: inside;
+}
+.light-gray-bg.form-block h2,
+.light-gray-bg.form-block a,
+.light-gray-bg.form-block a:hover,
+.light-gray-bg.form-block {
+    color: #777777;
+}
+
+.light-gray-bg {
+    background-color: #fafafa;
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.p-30{
+    padding: 30px;
+}
+
+.white-font{
+    color: #ffffff;
+}
+
+
+/* Header */  
+
+#header-top {
+    font-size: 12px;
+    color: #777777;
+    font-weight: 300;
+    backgroud-color:#525252;
+}
+
+.circle {
+    -webkit-border-radius: 100%!important;
+    -moz-border-radius: 100%!important;
+    border-radius: 100%!important;
+}
+
+
+
+/* Social */
+
+.social-links {
+    list-style: none;
+    font-size: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.social-links li {
+    display: inline-block;
+    margin: 0 2px 2px 0;
+}
+
+.btn-red{background-color:#831611;
+         color:white;}
+
+
+#main-title{
+    display:block;
+    margin:0 auto;
+    float:none;
+}
+
+
+.center-block:before,
+.center-block:after {
+    content:"";
+    display:table;
+}
+.center-block:after {
+    clear:both;
+}
+.center-block {
+    width: 70%;
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+    .circle-box{
+        max-width: 14em;
+        margin-top:1em;
+        display: block;
+        float: left;
+    }
+
+    .center-block {
+        width: 58% !important;
+        zoom: 1;
+    }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+.center-block {
+        width: 59% !important;
+        zoom: 1;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+
+}
